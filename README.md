@@ -24,3 +24,7 @@ Game Description:
 
 Code/Library specifications:
        I have used the <LedControl.h> library for controlling the led matrix via the MAX7219 IC and the <EEPROM.h> library to access the EEPROM memory of the arduino board. The EEPROM is used to save the value of high score. 
+
+AUTHOR
+      Vishwajeet Jadhav
+      

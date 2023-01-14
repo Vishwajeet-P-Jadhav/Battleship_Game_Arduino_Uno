@@ -79,7 +79,16 @@ int i = 0;
 }
 
 void sendNextBomb(){
-  nextColumn = random(0,8);
+  int x = Battleship_position;
+  if(x != 0 && x!=7 && x!=1 && x!= 6){
+     nextColumn = random(x-2,x+2);
+  }
+  else if(x==1 || x==6){
+    nextColumn = random(x-1,x+2);
+  }
+  else{
+    nextColumn = x;
+  }
   for(BombRow=0; BombRow<6;BombRow++){
     lc.setLed(0,BombRow,nextColumn,HIGH);
     delay(100);
@@ -90,8 +99,8 @@ void sendNextBomb(){
       lc.setLed(0,a,b,LOW);
     }
   }
-  flag = true;
   score ++;
+  flag = true;
 }
 
 void loop() {
